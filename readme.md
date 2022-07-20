@@ -9,4 +9,4 @@
 4. Then add your city after "="
 5. Done.
 
-![](https://pasteboard.co/745s6jFa6fgn.png)
+[![photo](https://pasteboard.co/745s6jFa6fgn.png "photo")](https://pasteboard.co/745s6jFa6fgn.png "photo")
