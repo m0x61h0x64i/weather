@@ -1,11 +1,12 @@
-const express = require('express')
-const app = express()
 const forecast = require('./weather.js')
 const geocode = require('./geocode.js')
+const app = require('express')()
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
-const path = require('path')
-const public = path.join(__dirname, 'public')
-app.use(express.static(public))
+app.use(cors())
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.get('/weather', (req, res) => {
     if (!req.query.city) {
