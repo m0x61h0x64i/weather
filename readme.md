@@ -1,7 +1,7 @@
 ![javascript](https://badges.aleen42.com/src/javascript.svg)
 ![Nodejs](https://img.shields.io/badge/-Node.js-58595a?style=flat&logo=Node.js)
 ![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen)
-![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)
+![Version](https://img.shields.io/badge/version-3.0.0-brightgreen)
 
 # **Weather Application**
 
