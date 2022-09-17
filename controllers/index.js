@@ -21,7 +21,7 @@ const getWeather = (req, res) => {
             return item.name.toLowerCase().replace(/\s/g, '') === req.query.input
         })
 
-        if (!userCity || !userCountry || !userState) {
+        if (userCity && userCountry && userState) {
             return res.status(400).send({ message: 'Your request is not valid!' })
         }
     }
