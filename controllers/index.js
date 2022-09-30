@@ -27,7 +27,7 @@ const getWeather = (req, res) => {
 
     forecast(req.query.input, (error, response) => {
         if (error) {
-            return res.status(503).send({ message: error })
+            return res.status(503).send({ message: error.toString() })
         }
 
         dayImages = {
@@ -41,6 +41,7 @@ const getWeather = (req, res) => {
             snow: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494615/weather/23_bxaofq.png',
             mist: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494754/weather/6_l1ast9.png'
         }
+
         nightImages = {
             clear_sky: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663493912/weather/10_qvkubl.png',
             few_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494042/weather/15_fkic6h.png',
@@ -52,7 +53,8 @@ const getWeather = (req, res) => {
             snow: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494672/weather/40_f4ozxs.png',
             mist: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494717/weather/2.2_sm5rr1.png'
         }
-        const weekForecast = response.body.list.slice(0, 7)
+        
+        const weekForecast = response.data.list.slice(0, 7)
         const status = weekForecast[0].dt_txt.slice(-9, -7) >= 12 ? 'night' : 'day'
         const newWeekForecast = weekForecast.map((item) => {
             const object = {

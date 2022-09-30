@@ -1,16 +1,13 @@
-const request = require('postman-request')
+const axios = require('axios')
 
-function forecast(address, callback) {
+const forecast = async(address, callback) => {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${address}&appid=${process.env.OWM_ACCESS_TOKEN}`
-    request({ url, json: true }, (error, response) => {
-        if (error) {
-            callback('Unable to connect to weather service!', null)
-        } else if (response.error) {
-            callback('Unable to find location.', null)
-        } else {
-            callback(null, response)
-        }
-    })
+    try {
+        const response = await axios(url)
+        return callback(null, response)
+    } catch (error) {
+        return callback(error, null)
+    }
 }
 
 module.exports = forecast
