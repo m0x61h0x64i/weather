@@ -6,7 +6,6 @@ const forecast = async(address, callback) => {
         const response = await axios(url)
         callback(null, response)
     } catch (error) {
-        console.log(error)
         callback(error, null)
     }
 }
