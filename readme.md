@@ -11,7 +11,7 @@
 ```bash
 git clone https://github.com/m0x31h0x64i/weather
 ```
--  create .env file with PORT, GEOCODE_ACCESS_TOKEN, OWM_ACCESS_TOKEN.
+-  create .env file with PORT, OWM_ACCESS_TOKEN.
 -  install apllication dependencies :
 ```bash
 npm i
@@ -21,15 +21,9 @@ npm i
 npm start
 ```
 #### you can use demo :
-1. First of all make sure you have [json formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en-US "json formatter") chrome extension to see parsed data.
-2. Go to demo [demo](https://key48798231.herokuapp.com/weather) page.
-3. Change the url to `https://key48798231.herokuapp.com/weather?input=`
-4. Then add your city after "="
+to understand how you can use this application try demo at [swagger documentation]([https://nodejs.org/en/download/](https://key48798231.herokuapp.com/api-docs/) "swagger documentation").
 
-[![image.png](https://i.postimg.cc/ZKPMGDgs/image.png)](https://postimg.cc/zVB7WpqT)
+[![photo-2022-09-30-22-39-38.jpg](https://i.postimg.cc/pdn2n4s2/photo-2022-09-30-22-39-38.jpg)](https://postimg.cc/rdM6Bn6b)
 
-------------
-
-### Notes :
-- to make this application i used express library.
-- i learned how to work with express and APIs.
+## Notes :
+- to make this application i used axios, express, swagger.
