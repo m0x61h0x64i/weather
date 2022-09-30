@@ -27,7 +27,7 @@ const getWeather = (req, res) => {
 
     forecast(req.query.input, (error, response) => {
         if (error) {
-            return res.status(500).send({ message: error })
+            return res.status(503).send({ message: error })
         }
 
         dayImages = {
