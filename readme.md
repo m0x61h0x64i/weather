@@ -1,7 +1,7 @@
 ![javascript](https://badges.aleen42.com/src/javascript.svg)
 ![Nodejs](https://img.shields.io/badge/-Node.js-58595a?style=flat&logo=Node.js)
 ![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen)
-![Version](https://img.shields.io/badge/version-3.0.0-brightgreen)
+![Version](https://img.shields.io/badge/version-4.0.0-brightgreen)
 
 # **Weather Application**
 
@@ -11,7 +11,7 @@
 ```bash
 git clone https://github.com/m0x31h0x64i/weather
 ```
--  create .env file with PORT, GEOCODE_ACCESS_TOKEN, WEATHERSTACK_ACCESS_KEY.
+-  create .env file with PORT, GEOCODE_ACCESS_TOKEN, OWM_ACCESS_TOKEN.
 -  install apllication dependencies :
 ```bash
 npm i
