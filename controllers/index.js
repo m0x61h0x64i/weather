@@ -26,6 +26,10 @@ const getWeather = (req, res) => {
     }
 
     forecast(req.query.input, (error, response) => {
+        if (error) {
+            return res.status(500).send({ message: error })
+        }
+
         dayImages = {
             clear_sky: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663493428/weather/26_n5rlcj.png',
             few_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494013/weather/27_zbfhns.png',
@@ -60,8 +64,8 @@ const getWeather = (req, res) => {
                 weather_description: item.weather[0].description,
                 wind: item.wind.speed,
                 date: item.dt_txt,
-                day_icon: item.weather[0].description === 'clear sky' ? dayImages.clear_sky : item.weather[0].description === 'few clouds' ? dayImages.few_clouds : item.weather[0].description === 'scattered clouds' ? dayImages.scattered_clouds : item.weather[0].description === 'broken clouds' ? dayImages.broken_clouds : item.weather[0].description === 'shower rain' ? dayImages.shower_rain : item.weather[0].description === 'rain' ? dayImages.rain : item.weather[0].description === 'thunderstorm' ? dayImages.thunderstorm : item.weather[0].description === 'snow' ? dayImages.snow : item.weather[0].description === 'mist' ? dayImages.mist : null,
-                night_icon: item.weather[0].description === 'clear sky' ? nightImages.clear_sky : item.weather[0].description === 'few clouds' ? nightImages.few_clouds : item.weather[0].description === 'scattered clouds' ? nightImages.scattered_clouds : item.weather[0].description === 'broken clouds' ? nightImages.broken_clouds : item.weather[0].description === 'shower rain' ? nightImages.shower_rain : item.weather[0].description === 'rain' ? nightImages.rain : item.weather[0].description === 'thunderstorm' ? nightImages.thunderstorm : item.weather[0].description === 'snow' ? nightImages.snow : item.weather[0].description === 'mist' ? nightImages.mist : null,
+                day_icon: item.weather[0].main === 'Clear' ? dayImages.clear_sky : item.weather[0].main === 'Clouds' ? dayImages.few_clouds : item.weather[0].description === 'scattered clouds' ? dayImages.scattered_clouds : item.weather[0].description === 'broken clouds' ? dayImages.broken_clouds : item.weather[0].main === 'Rain' ? dayImages.shower_rain : item.weather[0].main === 'rain' ? dayImages.rain : item.weather[0].main === 'Thunderstorm' ? dayImages.thunderstorm : item.weather[0].main === 'Snow' ? dayImages.snow : item.weather[0].main === 'Mist' ? dayImages.mist : item.weather[0].main === 'Drizzle' ? dayImages.shower_rain : null,
+                night_icon: item.weather[0].main === 'Clear' ? nightImages.clear_sky : item.weather[0].main === 'Clouds' ? nightImages.few_clouds : item.weather[0].description === 'scattered clouds' ? nightImages.scattered_clouds : item.weather[0].description === 'broken clouds' ? nightImages.broken_clouds : item.weather[0].main === 'Rain' ? nightImages.shower_rain : item.weather[0].main === 'rain' ? nightImages.rain : item.weather[0].main === 'Thunderstorm' ? nightImages.thunderstorm : item.weather[0].main === 'Snow' ? nightImages.snow : item.weather[0].main === 'Mist' ? nightImages.mist : item.weather[0].main === 'Drizzle' ? nightImages.shower_rain : null,
                 status
             }
             return object
