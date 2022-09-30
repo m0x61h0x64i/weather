@@ -55,7 +55,6 @@ const getWeather = (req, res) => {
         }
 
         const weekForecast = response.data.list.slice(0, 7)
-        const status = weekForecast[0].dt_txt.slice(-9, -7) >= 12 ? 'night' : 'day'
         const newWeekForecast = weekForecast.map((item) => {
             const object = {
                 temp_now: item.main.temp-273.15,
@@ -68,7 +67,10 @@ const getWeather = (req, res) => {
                 date: item.dt_txt,
                 day_icon: item.weather[0].main === 'Clear' ? dayImages.clear_sky : item.weather[0].main === 'Clouds' ? dayImages.few_clouds : item.weather[0].description === 'scattered clouds' ? dayImages.scattered_clouds : item.weather[0].description === 'broken clouds' ? dayImages.broken_clouds : item.weather[0].main === 'Rain' ? dayImages.shower_rain : item.weather[0].main === 'rain' ? dayImages.rain : item.weather[0].main === 'Thunderstorm' ? dayImages.thunderstorm : item.weather[0].main === 'Snow' ? dayImages.snow : item.weather[0].main === 'Mist' ? dayImages.mist : item.weather[0].main === 'Drizzle' ? dayImages.shower_rain : null,
                 night_icon: item.weather[0].main === 'Clear' ? nightImages.clear_sky : item.weather[0].main === 'Clouds' ? nightImages.few_clouds : item.weather[0].description === 'scattered clouds' ? nightImages.scattered_clouds : item.weather[0].description === 'broken clouds' ? nightImages.broken_clouds : item.weather[0].main === 'Rain' ? nightImages.shower_rain : item.weather[0].main === 'rain' ? nightImages.rain : item.weather[0].main === 'Thunderstorm' ? nightImages.thunderstorm : item.weather[0].main === 'Snow' ? nightImages.snow : item.weather[0].main === 'Mist' ? nightImages.mist : item.weather[0].main === 'Drizzle' ? nightImages.shower_rain : null,
-                status
+                country: response.data.city.country,
+                timezone: response.data.city.timezone,
+                sunrise: response.data.city.sunrise,
+                sunset: response.data.city.sunset,
             }
             return object
         })
