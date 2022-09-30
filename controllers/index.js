@@ -70,9 +70,7 @@ const getWeather = (req, res) => {
             }
             return object
         })
-        return error
-            ? error
-            : res.send(newWeekForecast)
+        return res.send(newWeekForecast)
     })
 }
 
