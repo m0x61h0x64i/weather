@@ -21,7 +21,7 @@ npm i
 npm start
 ```
 #### you can use demo :
-to understand how you can use this application try demo at [swagger documentation]([https://nodejs.org/en/download/](https://key48798231.herokuapp.com/api-docs/) "swagger documentation").
+to understand how you can use this application try demo at [swagger documentation]([https://nodejs.org/en/download/](https://quaint-fawn-snaps.cyclic.app/api-docs/) "swagger documentation").
 
 [![photo-2022-09-30-22-39-38.jpg](https://i.postimg.cc/pdn2n4s2/photo-2022-09-30-22-39-38.jpg)](https://postimg.cc/rdM6Bn6b)
 
