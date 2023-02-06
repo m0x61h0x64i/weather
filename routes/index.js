@@ -26,9 +26,9 @@ const getWeather = require('../controllers')
  *                  example: tehran
  *      responses:
  *          400:
- *              description: validation errors.
+ *              description: validation errors
  *          503:
- *              description: service erorrs
+ *              description: service errors
  *          200:
  *              description: OK
  */
