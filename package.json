@@ -13,10 +13,10 @@
     "country-state-city": "^3.1.2",
     "express": "^4.18.1",
     "swagger-jsdoc": "^6.2.5",
+    "dotenv": "^16.0.2",
     "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
-    "dotenv": "^16.0.2",
     "nodemon": "^2.0.19"
   }
 }
