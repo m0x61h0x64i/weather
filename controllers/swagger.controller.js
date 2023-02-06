@@ -11,7 +11,7 @@ swaggerOptions = {
         servers:
         [
             {
-                url: 'https://key48798231.herokuapp.com'
+                url: 'https://quaint-fawn-snaps.cyclic.app'
             },
             {
                 url: `http://localhost:${process.env.PORT}`
