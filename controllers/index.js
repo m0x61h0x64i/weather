@@ -31,35 +31,35 @@ const getWeather = (req, res) => {
         }
 
         dayImages = {
-            clear_sky: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663493428/weather/26_n5rlcj.png',
-            few_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494013/weather/27_zbfhns.png',
-            scattered_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494076/weather/35_lrem3y.png',
+            clear_sky: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769672/weather/26_q33cpe.webp',
+            few_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769714/weather/27_isvb25.webp',
+            scattered_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680768901/weather/35_n1gcvi.webp',
             broken_clouds: '',
-            shower_rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494194/weather/7_y6lslu.png',
-            rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494498/weather/8_ewu9xn.png',
-            thunderstorm: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494533/weather/12_qhnnso.png',
-            snow: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494615/weather/23_bxaofq.png',
-            mist: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494754/weather/6_l1ast9.png'
+            shower_rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680768445/weather/7_qqo3va.webp',
+            rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769628/weather/8_ag9v8d.webp',
+            thunderstorm: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680768572/weather/12_y6sjeg.webp',
+            snow: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680768711/weather/23_r85fyl.webp',
+            mist: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769570/weather/6_hwqxbs.webp'
         }
 
         nightImages = {
-            clear_sky: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663493912/weather/10_qvkubl.png',
-            few_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494042/weather/15_fkic6h.png',
-            scattered_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494120/weather/33_pip02o.png',
+            clear_sky: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769802/weather/10_bef1gb.webp',
+            few_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769336/weather/15_vnhwlm.webp',
+            scattered_clouds: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680768853/weather/33_ae7ft4.webp',
             broken_clouds: '',
-            shower_rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494368/weather/1_r5v2qk.png',
-            rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494439/weather/2.1_mldnra.png',
-            thunderstorm: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494582/weather/11_ei8d2j.png',
-            snow: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494672/weather/40_f4ozxs.png',
-            mist: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1663494717/weather/2.2_sm5rr1.png'
+            shower_rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769012/weather/1_vlgvls.webp',
+            rain: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769012/weather/1_vlgvls.webp',
+            thunderstorm: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769278/weather/11_bpaqph.webp',
+            snow: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769473/weather/40_lcxudo.webp',
+            mist: 'https://res.cloudinary.com/dw2hii7vj/image/upload/v1680769216/weather/2.2_bbpb32.webp'
         }
 
         const weekForecast = response.data.list.slice(0, 7)
         const newWeekForecast = weekForecast.map((item) => {
             const object = {
-                temp_now: item.main.temp-273.15,
-                temp_min: item.main.temp_min-273.15,
-                temp_max: item.main.temp_max-273.15,
+                temp_now: (item.main.temp-273.15).toFixed(1),
+                temp_min: (item.main.temp_min-273.15).toFixed(1),
+                temp_max: (item.main.temp_max-273.15).toFixed(1),
                 humidity: item.main.humidity,
                 weather: item.weather[0].main,
                 weather_description: item.weather[0].description,
