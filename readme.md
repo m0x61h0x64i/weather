@@ -5,6 +5,13 @@
 
 # **Weather Application**
 
+-----------------------UPDATE-----------------------
+
+- You can now use this application with user interface at : https://a-hosseini.ir/projects/weather/
+- Front-end developed by [Alireza Hosseini](https://github.com/alirezahoseini/Weather-App-JS)
+
+-----------------------UPDATE-----------------------
+
 ## How to use this application?
 #### you can install & run it :
 - on the terminal run the following command to download the application :
